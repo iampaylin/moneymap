@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 0px;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+nav a {
+  margin-right: 0px;
+  text-decoration: none;
+  color: blue;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para o menu inferior fixo */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4057a9;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.circle-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #BECAF6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.circle-icon:hover {
+  background-color: #f1f1f1;
+}
+
+/* Para telas pequenas (dispositivos móveis) */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+    margin-bottom: 60px; /* Ajuste para acomodar o menu inferior */
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 10px;
+  }
+
+  header {
+    justify-content: center;
+  }
+}
+
+
