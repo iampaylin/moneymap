@@ -14,6 +14,7 @@ body {
     align-items: center;
 
     width: 100%;
+    height: 80svh;
   }
   
   .home-buttons {
@@ -22,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    width: 100%;
+    width: 340px;
   }
   
   .home-button {

@@ -20,16 +20,14 @@ function App() {
           <Route path="/dashboard" element={<Dashboard user={user} />} />
           <Route path="/goals" element={<Goals user={user} />} />
         </Routes>
-
+          
         {user && (
           <footer className="bottom-nav">
             <Link to="/dashboard" className="nav-item">
               <div className="circle-icon">💰</div>
-              <span>Controle</span>
             </Link>
             <Link to="/goals" className="nav-item">
               <div className="circle-icon">🎯</div>
-              <span>Metas</span>
             </Link>
           </footer>
         )}

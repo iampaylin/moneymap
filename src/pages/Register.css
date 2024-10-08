@@ -1,71 +1,65 @@
 .register-container {
     max-width: 100%;
-
+    height: 80vh;
+  
     display: flex;
     flex-direction: column;
-
+  
     justify-content: center;
     align-items: center;
   }
-
+  
   form {
     display: flex;
     flex-direction: column;
-
+  
     justify-content: center;
     align-items: center;
   }
   
-  input {
+  img:hover {
+    cursor: pointer;
+  }
+  
+  .register-input {
     width: 100%;
     max-width: 350px;
     border: 1px solid #ccc;
-
+  
     border-radius: 10px;
   }
   
-  button {
+  .register-button {
     padding: 10px;
     background-color: #102990;
     color: white;
-    border: none;
+  
+    border: 2px solid;
     cursor: pointer;
+  
     width: 110%;
-
     max-width: 350px;
-
+  
     border-radius: 10px;
-
+  
     transition: 350ms;
     margin: 10px;
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #BECAF6;
+    color: #262626;
   }
-
-  a {
-    text-decoration: none;
-  }
-
+  
   .login-link {
     margin: 10px;
     color: #007bff;
     text-decoration: underline;
     text-align: center;
-    
+  
     transition: 350ms;
   }
   
   .login-link:hover {
     color: #000;
   }
-
-  /* Botão de voltar */
-.back-button {
-  display: inline-block;
-  margin-bottom: 20px;
-  color: #4caf50;
-  text-decoration: none;
-  font-size: 24px;
-}
