@@ -24,8 +24,10 @@
   .register-input {
     width: 100%;
     max-width: 350px;
-    border: 1px solid #ccc;
-  
+    border: 2px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
+
     border-radius: 10px;
   }
   
@@ -33,33 +35,20 @@
     padding: 10px;
     background-color: #102990;
     color: white;
-  
-    border: 2px solid;
+
+    border: 2px solid transparent;
     cursor: pointer;
-  
-    width: 110%;
+
+    width: 100%;
     max-width: 350px;
-  
+
     border-radius: 10px;
-  
+
     transition: 350ms;
-    margin: 10px;
+    margin: 10px 0;
   }
   
-  button:hover {
+  .register-button:hover {
     background-color: #BECAF6;
     color: #262626;
-  }
-  
-  .login-link {
-    margin: 10px;
-    color: #007bff;
-    text-decoration: underline;
-    text-align: center;
-  
-    transition: 350ms;
-  }
-  
-  .login-link:hover {
-    color: #000;
   }

@@ -29,18 +29,20 @@ const Login = ({ setUser }) => {
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
         <input
+          className='login-input'
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          className='login-input'
           type="password"
           placeholder="Senha"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Entrar</button>
+        <button type="submit" className="login-button">Entrar</button>
       </form>
     </div>
   );

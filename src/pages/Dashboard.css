@@ -1,12 +1,12 @@
 .dashboard-container {
   width: 100%;
-
   text-align: center;
 }
 
 .dashboard-input{
   display: block;
   margin: 10px 0;
+  border-radius: 10px;
   padding: 10px;
   width: 300px;
   border: 2px solid #262626;
@@ -18,19 +18,26 @@
   padding: 10px;
   width: 320px;
 
+  border-radius: 10px;
   border: 2px solid #262626;
 }
 
 .dashboard-button {
-  padding: 10px;
-  background-color: #102990;
-  color: white;
-  border: none;
-  cursor: pointer;
+    padding: 10px;
+    background-color: #102990;
+    color: white;
 
-  border: 2px solid;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
 
-  width: 250px;
+    width: 100%;
+    max-width: 340px;
+
+    border-radius: 10px;
+
+    transition: 350ms;
+    margin: 10px 0;
 }
 
 .dashboard-button:hover {
@@ -38,12 +45,12 @@
   color: #262626;
 }
 
-ul {
+.dashboard-ul {
   list-style-type: none;
   padding: 0;
 }
 
-ul li {
+.dashboard-ul li {
   padding: 10px 0;
   text-align: center;
 
@@ -53,23 +60,27 @@ ul li {
   display: flex;
   flex-direction: row;
 
-  justify-content: center;
+  font-weight: bold;
+
+  justify-content: space-around;
   align-items: center;
 }
 
-.income {
+.lucro {
   background-color: #3ca84a;
   color: rgb(236, 255, 236);
 }
 
-.expense {
+.gasto {
   background-color: crimson;
   color: rgb(255, 242, 242);
 }
 
 .delete, .edit {
-  width: 50px;
-  background-color: #f5f5f5;
+  margin: 10px;
+  background-color: crimson;
+  padding: 5px;
+  border-radius: 5px;
   border: 1px solid transparent;
 
   transition: all 0.3s ease;

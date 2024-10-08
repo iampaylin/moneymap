@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import { collection, doc, getDocs, addDoc, deleteDoc, setDoc } from 'firebase/firestore'; // Correção aqui
 import { db, auth } from '../firebaseConfig';
-// import Trash from '../assets/trash.png';
+import Delete from '../assets/trash.png';
 // import Edit from '../assets/edit.png';
 
 const Dashboard = () => {
@@ -102,10 +102,10 @@ const Dashboard = () => {
     }
   };
 
-  const handleEdit = (transaction) => {
+  /* const handleEdit = (transaction) => {
     setEditingTransaction(transaction);
     setFormData({ type: transaction.type, amount: transaction.amount, description: transaction.description });
-  };
+  }; */
 
   const handleDelete = async (id) => {
     const user = auth.currentUser;
@@ -128,14 +128,10 @@ const Dashboard = () => {
     }
   };
   return (
-    <div className="dashboard">
+    <div className="dashboard-container">
       <h2>Saldo: R$ {balance.toFixed(2)}</h2>
 
       <form onSubmit={handleSubmit} className="transaction-form">
-        <select name="type" value={formData.type} onChange={handleInputChange} required className="dashboard-select">
-          <option value="gain" className="dashboard-option">Lucro</option>
-          <option value="expense" className="dashboard-option">Gasto</option>
-        </select>
         <input
           className="dashboard-input"
           type="number"
@@ -153,24 +149,29 @@ const Dashboard = () => {
           value={formData.description}
           onChange={handleInputChange}
         />
-        <button type="submit">
+        <select name="type" value={formData.type} onChange={handleInputChange} required className="dashboard-select">
+          <option value="gain" className="dashboard-option lucro">Lucro</option>
+          <option value="expense" className="dashboard-option gasto">Gasto</option>
+        </select>
+        <button type="submit" className="dashboard-button">
           {editingTransaction ? 'Salvar Alterações' : 'Adicionar Transação'}
         </button>
       </form>
 
-      <ul className="transaction-list">
+      <ul className="transaction-list dashboard-ul">
         {transactions.map(transaction => (
-          <li key={transaction.id} className="transaction-item">
-            <span style={{ color: transaction.type === 'gain' ? 'green' : 'red' }}>
+          <li key={transaction.id} className="transaction-item" style={{ backgroundColor: transaction.type === 'gain' ? '#3ca84a' : 'crimson' }}>
+            <span style={{ Color: transaction.type === 'gain' ? 'green' : 'red' }}>
               {transaction.type === 'gain' ? 'Lucro' : 'Gasto'}: R$ {transaction.amount} - {transaction.description}
             </span>
             <div className="transaction-actions">
-              <button onClick={() => handleEdit(transaction)}>Editar</button>
-              <button onClick={() => handleDelete(transaction.id)}>Excluir</button>
+              {/* <button onClick={() => handleEdit(transaction)} className='edit'><img src={Edit} alt="Editar" width={20} height={20}/></button> */}
+              <button onClick={() => handleDelete(transaction.id)} className='delete'><img src={Delete} alt="Deletar" width={20} height={20}/></button>
             </div>
           </li>
         ))}
       </ul>
+
     </div>
   );
 };

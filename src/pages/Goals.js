@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { addDoc, collection, query, where, onSnapshot, doc, deleteDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
+import './Goals.css';
 
 const Goals = ({ user }) => {
   const [goalName, setGoalName] = useState('');
@@ -77,32 +78,35 @@ const Goals = ({ user }) => {
       <h1>Metas Financeiras</h1>
       <form onSubmit={handleSubmitOrUpdateGoal}>
         <input
+          className="goals-input"
           type="text"
           placeholder="Nome da Meta"
           value={goalName}
           onChange={(e) => setGoalName(e.target.value)}
         />
         <input
+          className="goals-input"
           type="number"
           placeholder="Valor Total da Meta"
           value={targetAmount}
           onChange={(e) => setTargetAmount(e.target.value)}
         />
         <input
+          className="goals-input"
           type="number"
           placeholder="Investimento Mensal"
           value={monthlyInvestment}
           onChange={(e) => setMonthlyInvestment(e.target.value)}
         />
-        <button type="submit">{editing ? 'Atualizar Meta' : 'Adicionar Meta'}</button>
+        <button className="goals-button" type="submit">{editing ? 'Atualizar Meta' : 'Adicionar Meta'}</button>
       </form>
 
       <h2>Suas Metas</h2>
-      <ul>
+      <ul className="goals-ul">
         {goals.map((goal) => (
           <li key={goal.id}>
             {goal.goalName}: {goal.monthsToGoal} meses
-            <button onClick={() => handleEditGoal(goal)}>Editar</button>
+            {/* <button onClick={() => handleEditGoal(goal)}>Editar</button> */}	
             <button onClick={() => handleDeleteGoal(goal.id)}>Remover</button>
           </li>
         ))}
