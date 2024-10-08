@@ -3,6 +3,7 @@ Olá amigos!
 Antes de começar a programar tenham o NodeJS instalado.
 
 Vocês vão precisa de algumas dependencias para rodar o aplicativo na máquina de vocês:
+
 npm install react react-dom firebase react-router-dom
 npm install react react-dom
 npm install firebase
